@@ -1,0 +1,161 @@
+==78629== NVPROF is profiling process 78629, command: ./main3d.gnu.TPROF.CUDA.ex ncell=256 max_grid_size=256
+CUDA initialized with 1 GPU
+AMReX (19.03-111-ge397bb29cfbe-dirty) initialized
+
+
+TinyProfiler total time across processes [min...avg...max]: 0.02656 ... 0.02656 ... 0.02656
+
+-------------------------------------------------------------------------------------------
+Name                                        NCalls  Excl. Min  Excl. Avg  Excl. Max   Max %
+-------------------------------------------------------------------------------------------
+FabArray::setVal()                               1    0.01658    0.01658    0.01658  62.43%
+kokkos_for_1d                                    1  0.0004508  0.0004508  0.0004508   1.70%
+kokkos_for_3d                                    1  0.0003685  0.0003685  0.0003685   1.39%
+amrex_for_3d                                     1   0.000354   0.000354   0.000354   1.33%
+amrex_for_1d                                     1  0.0003503  0.0003503  0.0003503   1.32%
+DistributionMapping::SFCProcessorMapDoIt()       1  2.278e-05  2.278e-05  2.278e-05   0.09%
+DistributionMapping::Distribute()                1  2.522e-06  2.522e-06  2.522e-06   0.01%
+-------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------
+Name                                        NCalls  Incl. Min  Incl. Avg  Incl. Max   Max %
+-------------------------------------------------------------------------------------------
+FabArray::setVal()                               1    0.01658    0.01658    0.01658  62.43%
+kokkos_for_1d                                    1  0.0004508  0.0004508  0.0004508   1.70%
+kokkos_for_3d                                    1  0.0003685  0.0003685  0.0003685   1.39%
+amrex_for_3d                                     1   0.000354   0.000354   0.000354   1.33%
+amrex_for_1d                                     1  0.0003503  0.0003503  0.0003503   1.32%
+DistributionMapping::SFCProcessorMapDoIt()       1   2.53e-05   2.53e-05   2.53e-05   0.10%
+DistributionMapping::Distribute()                1  2.522e-06  2.522e-06  2.522e-06   0.01%
+-------------------------------------------------------------------------------------------
+
+Total GPU global memory (MB): 16130
+Free  GPU global memory (MB): 15559
+[The         Arena] space (MB): 136
+[The  Device Arena] space (MB): 8
+[The Managed Arena] space (MB): 8
+[The  Pinned Arena] space (MB): 8
+AMReX (19.03-111-ge397bb29cfbe-dirty) finalized
+==78629== Profiling application: ./main3d.gnu.TPROF.CUDA.ex ncell=256 max_grid_size=256
+==78629== Profiling result:
+   Start  Duration            Grid Size      Block Size     Regs*    SSMem*    DSMem*      Size  Throughput  SrcMemType  DstMemType           Device   Context    Stream        Unified Memory  Virtual Address  Name
+853.63ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b35e   0x2aaaf7000000  [Unified Memory CPU page faults]
+853.78ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7010000  [Unified Memory CPU page faults]
+853.86ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7020000  [Unified Memory CPU page faults]
+853.99ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7040000  [Unified Memory CPU page faults]
+854.21ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7080000  [Unified Memory CPU page faults]
+854.63ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7100000  [Unified Memory CPU page faults]
+855.42ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7200000  [Unified Memory CPU page faults]
+855.49ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7210000  [Unified Memory CPU page faults]
+855.57ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7220000  [Unified Memory CPU page faults]
+855.69ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7240000  [Unified Memory CPU page faults]
+855.91ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7280000  [Unified Memory CPU page faults]
+856.31ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7300000  [Unified Memory CPU page faults]
+857.10ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7400000  [Unified Memory CPU page faults]
+857.17ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7410000  [Unified Memory CPU page faults]
+857.24ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7420000  [Unified Memory CPU page faults]
+857.36ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7440000  [Unified Memory CPU page faults]
+857.58ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7480000  [Unified Memory CPU page faults]
+858.00ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7500000  [Unified Memory CPU page faults]
+858.93ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7600000  [Unified Memory CPU page faults]
+859.02ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7610000  [Unified Memory CPU page faults]
+859.10ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7620000  [Unified Memory CPU page faults]
+859.23ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7640000  [Unified Memory CPU page faults]
+859.44ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7680000  [Unified Memory CPU page faults]
+859.83ms         -                    -               -         -         -         -         -           -           -           -                -         -         -         PC 0xadf6b3b8   0x2aaaf7700000  [Unified Memory CPU page faults]
+862.82ms  3.0400us              (1 1 1)         (1 1 1)        16        0B        0B         -           -           -           -  Tesla V100-SXM2         1         7                     -                -  Kokkos::Impl::_GLOBAL__N__55_tmpxft_00006bca_00000000_6_Kokkos_Cuda_Instance_cpp1_ii_a8bc5097::query_cuda_kernel_arch(int*) [145]
+862.88ms  2.4960us                    -               -         -         -         -        4B  1.5283MB/s      Device    Pageable  Tesla V100-SXM2         1         7                     -                -  [CUDA memcpy DtoH]
+865.49ms  1.6000us                    -               -         -         -         -      128B  76.294MB/s    Pageable      Device  Tesla V100-SXM2         1         7                     -                -  [CUDA memcpy HtoD]
+865.53ms  1.2800us                    -               -         -         -         -  8.0000KB  5.9605GB/s      Device           -  Tesla V100-SXM2         1         7                     -                -  [CUDA memset]
+865.96ms  1.6320us                    -               -         -         -         -      128B  74.798MB/s    Pageable      Device  Tesla V100-SXM2         1         7                     -                -  [CUDA memcpy HtoD]
+866.37ms  1.7920us                    -               -         -         -         -      128B  68.120MB/s    Pageable      Device  Tesla V100-SXM2         1         7                     -                -  [CUDA memcpy HtoD]
+866.40ms  1.2800us                    -               -         -         -         -  20.004KB  14.904GB/s      Device           -  Tesla V100-SXM2         1         7                     -                -  [CUDA memset]
+866.87ms  1.4080us                    -               -         -         -         -       24B  16.256MB/s    Pageable      Device  Tesla V100-SXM2         1         7                     -                -  [CUDA memcpy HtoD]
+866.90ms  4.8640us            (512 1 1)       (256 1 1)        16        0B        0B         -           -           -           -  Tesla V100-SXM2         1         7                     -                -  Kokkos::_GLOBAL__N__52_tmpxft_00006c03_00000000_6_Kokkos_Cuda_Locks_cpp1_ii_6c3fe424::init_lock_array_kernel_atomic(void) [162]
+866.92ms  2.4960us            (640 1 1)       (256 1 1)        16        0B        0B         -           -           -           -  Tesla V100-SXM2         1         7                     -                -  Kokkos::_GLOBAL__N__52_tmpxft_00006c03_00000000_6_Kokkos_Cuda_Locks_cpp1_ii_6c3fe424::init_lock_array_kernel_threadid(int) [163]
+867.10ms         -                    -               -         -         -         -         -           -           -           -                -         -         -           PC 0x4a63f7   0x2aaaf680f000  [Unified Memory CPU page faults]
+867.70ms  297.53us                    -               -         -         -         -       56B  183.80KB/s     Managed    Pageable  Tesla V100-SXM2         1         7                     -                -  [CUDA memcpy DtoH]
+867.71ms  292.90us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     2   0x2aaaf680f000  [Unified Memory GPU page faults]
+867.96ms  7.5520us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -           60.000000KB   0x2aaaf6800000  [Unified Memory Memcpy HtoD]
+867.97ms  2.9120us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -            4.000000KB   0x2aaaf680f000  [Unified Memory Memcpy HtoD]
+868.08ms  16.509ms          (65536 1 1)       (256 1 1)        34        0B        0B         -           -           -           -  Tesla V100-SXM2         1        14                     -                -  _ZN5amrex13launch_globalIZNS_8FabArrayINS_9FArrayBoxEE6setValISt9enable_ifILb1EvEEEvdiiRKNS_7IntVectEEUlvE_EEvT_ [170]
+868.09ms  459.01us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                    12   0x2aaafc000000  [Unified Memory GPU page faults]
+868.55ms  430.27us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     9   0x2aaafc200000  [Unified Memory GPU page faults]
+868.99ms  363.74us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aaafc400000  [Unified Memory GPU page faults]
+869.35ms  209.15us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aaafc600000  [Unified Memory GPU page faults]
+869.56ms  198.98us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aaafc800000  [Unified Memory GPU page faults]
+869.76ms  212.38us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aaafca01000  [Unified Memory GPU page faults]
+869.98ms  199.33us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aaafcc00000  [Unified Memory GPU page faults]
+870.18ms  197.98us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     3   0x2aaafce00000  [Unified Memory GPU page faults]
+870.38ms  215.74us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     2   0x2aaafd000000  [Unified Memory GPU page faults]
+870.60ms  200.83us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     6   0x2aaafd200000  [Unified Memory GPU page faults]
+870.80ms  196.67us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aaafd400000  [Unified Memory GPU page faults]
+871.00ms  193.31us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     6   0x2aaafd600000  [Unified Memory GPU page faults]
+871.20ms  218.98us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     2   0x2aaafd800000  [Unified Memory GPU page faults]
+871.42ms  204.26us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aaafda00000  [Unified Memory GPU page faults]
+871.63ms  197.06us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     2   0x2aaafdc00000  [Unified Memory GPU page faults]
+871.83ms  206.75us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aaafde00000  [Unified Memory GPU page faults]
+872.04ms  238.40us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     6   0x2aaafe000000  [Unified Memory GPU page faults]
+872.28ms  196.54us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     2   0x2aaafe200000  [Unified Memory GPU page faults]
+872.48ms  203.97us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     2   0x2aaafe400000  [Unified Memory GPU page faults]
+872.68ms  201.50us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     8   0x2aaafe600000  [Unified Memory GPU page faults]
+872.89ms  367.94us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aaafe800000  [Unified Memory GPU page faults]
+873.26ms  265.22us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     2   0x2aaafea00000  [Unified Memory GPU page faults]
+873.53ms  257.50us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aaafec00000  [Unified Memory GPU page faults]
+873.79ms  269.15us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     5   0x2aaafee00000  [Unified Memory GPU page faults]
+874.06ms  257.12us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aaaff000000  [Unified Memory GPU page faults]
+874.32ms  272.06us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aaaff200000  [Unified Memory GPU page faults]
+874.59ms  266.27us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aaaff400000  [Unified Memory GPU page faults]
+874.86ms  266.56us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aaaff600000  [Unified Memory GPU page faults]
+875.13ms  260.26us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aaaff800000  [Unified Memory GPU page faults]
+875.39ms  262.53us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     7   0x2aaaffa00000  [Unified Memory GPU page faults]
+875.66ms  256.90us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     5   0x2aaaffc00000  [Unified Memory GPU page faults]
+875.92ms  252.13us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aaaffe00000  [Unified Memory GPU page faults]
+876.17ms  324.74us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     1   0x2aab00001000  [Unified Memory GPU page faults]
+876.50ms  268.38us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aab00200000  [Unified Memory GPU page faults]
+876.77ms  258.02us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     3   0x2aab00400000  [Unified Memory GPU page faults]
+877.03ms  253.98us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aab00600000  [Unified Memory GPU page faults]
+877.29ms  261.09us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     2   0x2aab00800000  [Unified Memory GPU page faults]
+877.55ms  267.84us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     2   0x2aab00a00000  [Unified Memory GPU page faults]
+877.82ms  261.38us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aab00c00000  [Unified Memory GPU page faults]
+878.09ms  261.76us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     2   0x2aab00e00000  [Unified Memory GPU page faults]
+878.35ms  411.74us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     2   0x2aab01000000  [Unified Memory GPU page faults]
+878.76ms  301.47us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     6   0x2aab01200000  [Unified Memory GPU page faults]
+879.07ms  299.55us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     6   0x2aab01400000  [Unified Memory GPU page faults]
+879.37ms  295.78us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     5   0x2aab01600000  [Unified Memory GPU page faults]
+879.67ms  306.69us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aab01800000  [Unified Memory GPU page faults]
+879.98ms  295.71us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     2   0x2aab01a00000  [Unified Memory GPU page faults]
+880.28ms  304.42us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aab01c00000  [Unified Memory GPU page faults]
+880.58ms  291.58us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aab01e00000  [Unified Memory GPU page faults]
+880.88ms  332.29us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     5   0x2aab02000000  [Unified Memory GPU page faults]
+881.21ms  296.51us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     2   0x2aab02200000  [Unified Memory GPU page faults]
+881.51ms  293.66us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     2   0x2aab02400000  [Unified Memory GPU page faults]
+881.81ms  305.02us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     2   0x2aab02600000  [Unified Memory GPU page faults]
+882.12ms  291.04us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     3   0x2aab02801000  [Unified Memory GPU page faults]
+882.41ms  320.13us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     7   0x2aab02a00000  [Unified Memory GPU page faults]
+882.73ms  234.85us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     2   0x2aab02c00000  [Unified Memory GPU page faults]
+882.97ms  115.97us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     2   0x2aab02e00000  [Unified Memory GPU page faults]
+883.09ms  111.10us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     6   0x2aab03000000  [Unified Memory GPU page faults]
+883.20ms  111.78us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     5   0x2aab03200000  [Unified Memory GPU page faults]
+883.31ms  84.352us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aab03400000  [Unified Memory GPU page faults]
+883.40ms  89.024us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     2   0x2aab03600000  [Unified Memory GPU page faults]
+883.49ms  306.40us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aab03800000  [Unified Memory GPU page faults]
+883.80ms  270.43us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     5   0x2aab03a00000  [Unified Memory GPU page faults]
+884.07ms  257.50us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     4   0x2aab03c00000  [Unified Memory GPU page faults]
+884.33ms  260.93us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -                     6   0x2aab03e00000  [Unified Memory GPU page faults]
+884.61ms  334.91us          (65536 1 1)       (256 1 1)        18        0B        0B         -           -           -           -  Tesla V100-SXM2         1        14                     -                -  _ZN5amrex13launch_globalIZNS_3ForIZ9main_mainvEUliiiE_EEvRKNS_3BoxET_EUlvE_EEvS6_ [175]
+884.97ms  346.46us            (8 64 64)        (32 4 4)        24        0B        0B         -           -           -           -  Tesla V100-SXM2         1         7                     -                -  __nv_static_48__39_tmpxft_0001fb45_00000000_6_main_cpp1_ii_main__ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIZ9main_mainvEUliiiE0_NS_13MDRangePolicyIJNS_4RankILj3ELNS_7IterateE0ELS6_0EEEEEENS_4CudaEEEEEvT_ [181]
+885.33ms  332.64us          (65536 1 1)       (256 1 1)        16        0B        0B         -           -           -           -  Tesla V100-SXM2         1        14                     -                -  _ZN5amrex13launch_globalIZNS_3ForIlZ9main_mainvEUllE_vEEvT_T0_EUlvE_EEvS3_ [185]
+885.69ms  431.39us         (262144 1 1)        (1 64 1)        16        0B        0B         -           -           -           -  Tesla V100-SXM2         1         7                     -                -  __nv_static_48__39_tmpxft_0001fb45_00000000_6_main_cpp1_ii_main__ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIZ9main_mainvEUlRKlE_NS_11RangePolicyIJNS_4CudaEEEES7_EEEEvT_ [197]
+886.13ms         -                    -               -         -         -         -         -           -           -           -                -         -         -           PC 0x467445   0x2aaaf680f000  [Unified Memory CPU page faults]
+886.15ms  6.2080us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -           60.000000KB   0x2aaaf6800000  [Unified Memory Memcpy DtoH]
+886.16ms  2.3680us                    -               -         -         -         -         -           -           -           -  Tesla V100-SXM2         -         -            4.000000KB   0x2aaaf680f000  [Unified Memory Memcpy DtoH]
+886.47ms  3.0080us                    -               -         -         -         -      128B  40.582MB/s      Device    Pageable  Tesla V100-SXM2         1         7                     -                -  [CUDA memcpy DtoH]
+886.64ms  2.5920us                    -               -         -         -         -      128B  47.095MB/s      Device    Pageable  Tesla V100-SXM2         1         7                     -                -  [CUDA memcpy DtoH]
+887.14ms  3.0720us                    -               -         -         -         -      128B  39.736MB/s      Device    Pageable  Tesla V100-SXM2         1         7                     -                -  [CUDA memcpy DtoH]
+
+Regs: Number of registers used per CUDA thread. This number includes registers used internally by the CUDA driver and/or tools and can be more than what the compiler shows.
+SSMem: Static shared memory allocated per CUDA block.
+DSMem: Dynamic shared memory allocated per CUDA block.
+SrcMemType: The type of source memory accessed by memory operation/copy
+DstMemType: The type of destination memory accessed by memory operation/copy
