@@ -1,7 +1,10 @@
 
-* sizes: the first number is the number of cells in each direction of the whole domain
-         the second number is grid size
+* Comparison
+
+  sizes: the first number is the number of cells in each direction of the whole domain the second number is grid size
+
   perf: performance of amrex relative to kokkos
+
 | sizes   |  amrex 3d | kokkos 3d | perf 3d |  amrex 1d | kokkos 1d | perf 1d |
 |---------+-----------+-----------+---------+-----------+-----------+---------|
 | 512,512 |  0.002677 |  0.002679 |     1.0 |   0.00266 |  0.003452 |     1.3 |
