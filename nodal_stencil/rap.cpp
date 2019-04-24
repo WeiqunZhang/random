@@ -146,7 +146,7 @@ int main (int argc, char* argv[])
 
         std::cout << "\n";
 
-        std::cout << space << "csten(i,j,k,"+ist+") = 0.25d0 * &\n";
+        std::cout << space << "csten(i,j,k,"+ist+") = 0.125d0 * &\n";
         for (int item = 0; item < off_ap.size(); ++item) {
             if (item == 0) {
                 std::cout << space << "  ( ";
