@@ -59,7 +59,7 @@ MyTest::solve ()
 
     ebtensorop.setLevelBC(0, &solution);
 
-    const Real a = 1.0e6;
+    const Real a = 1.0e3; // 1.0e6;
     {
         MultiFab tmp(grids, dmap, 1, 0, MFInfo(), *factory);
         tmp.setVal(a);
@@ -84,15 +84,24 @@ MyTest::solve ()
     mlmg.setVerbose(verbose);
     mlmg.setBottomVerbose(bottom_verbose);
 
-    mlmg.setBottomTolerance(1.e-12);
+    mlmg.setBottomTolerance(1.e-4);
 
     MultiFab rhs(grids, dmap, 3, 0, MFInfo(), *factory);
     rhs.setVal(0.0);
     rhs.setVal(dpdx, 0, 1);
     MultiFab::Saxpy(rhs, a, exact, 0, 0, 1, 0);
 
-//    solution.setVal(0.0);
+    solution.setVal(0.0);
     mlmg.solve({&solution}, {&rhs}, tol_rel, tol_abs);
+
+    MultiFab error(grids, dmap, 1, 0, MFInfo(), *factory);
+    MultiFab::Copy(error, solution, 0, 0, 1, 0);
+    MultiFab::Subtract(error, exact, 0, 0, 1, 0);
+    const MultiFab& vfrc = factory->getVolFrac();
+    MultiFab::Multiply(error, vfrc, 0, 0, 1, 0);
+    const auto dx = geom.CellSize();
+    error.mult(dx[0]*dx[1]*dx[2]);
+    amrex::Print() << "1-norm error = " << error.norm1() << std::endl;
 }
 
 void
@@ -130,6 +139,11 @@ MyTest::initData ()
 
     const auto& dx = geom.CellSizeArray();
 
+    Real R;
+    ParmParse pp("eb2");
+    pp.get("cylinder_radius", R);
+    Real R2 = R*R;
+
     for (MFIter mfi(exact); mfi.isValid(); ++mfi) {
         const Box& bx = mfi.fabbox();
         const auto lo = amrex::lbound(bx);
@@ -142,7 +156,7 @@ MyTest::initData ()
                     Real z = (k+0.5)*dx[2] + (-1.0);
                     Real r2 = y*y+z*z;
 //                    if (r2 < 1.0) {
-                        fab(i,j,k) = (0.25/mu)*dpdx*(1.0-r2);
+                        fab(i,j,k) = (0.25/mu)*dpdx*(R2-r2);
 //                    } else {
 //                        fab(i,j,k) = 0.0;
 //                    }
