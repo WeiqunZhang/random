@@ -107,8 +107,14 @@ MyTest::solve ()
     rhs.setVal(dpdx, flow_dir, 1);
     MultiFab::Saxpy(rhs, a, exact, 0, 0, 1, 0);
 
-    solution.setVal(0.0);
+//    solution.setVal(0.0);
     mlmg.solve({&solution}, {&rhs}, tol_rel, tol_abs);
+
+    for (int idim = 0; idim < AMREX_SPACEDIM; ++idim) {
+        amrex::Print() << "Component " << idim << " min and max "
+                       << solution.min(idim) << ", " << solution.max(idim)
+                       << "\n";
+    }
 
     MultiFab error(grids, dmap, 1, 0, MFInfo(), *factory);
     MultiFab::Copy(error, solution, flow_dir, 0, 1, 0);
