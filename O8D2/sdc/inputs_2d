@@ -1,0 +1,22 @@
+&probin
+
+ verbose = 0
+
+ stencil_type = "narrow"  ! narrow or wide
+	
+ prob_type = 1
+ dim = 2
+ nsteps = 10000
+ plot_int = 10000
+ stop_time = 1.0d0
+ n_cell = 20
+ max_grid_size = 80
+
+ advance_method = 2
+ sdc_nnodes = 3
+ sdc_iters = 7
+ sdc_tol_residual = -1.d-5
+
+ D2_order = 8
+
+/
