@@ -1,13 +1,13 @@
-* Coffee list
+* NEXT Coffee list
 - [ ] John
 - [ ] Marc
 - [ ] Weiqun
 - [ ] Johannes
-- [ ] Jean
+- [X] Jean
 - [X] Doreen
-- [ ] Daniel
+- [X] Daniel
 - [ ] Anne
-- [ ] Lucas
-- [ ] Don
+- [X] Lucas
+- [X] Don
 - [ ] Katie
 - [ ] Jangho
