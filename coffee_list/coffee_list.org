@@ -6,8 +6,10 @@
 - [X] Jean
 - [X] Doreen
 - [X] Daniel
-- [ ] Anne
+- [X] Anne
 - [X] Lucas
 - [X] Don
+- [ ] Cameron
+- [ ] Adam
 - [ ] Katie
 - [ ] Jangho
