@@ -1,8 +1,7 @@
 * NEXT Coffee list
-- [ ] John
+- [X] John
 - [ ] Marc
 - [ ] Weiqun
-- [ ] Johannes
 - [X] Jean
 - [X] Doreen
 - [X] Daniel
@@ -11,5 +10,5 @@
 - [X] Don
 - [ ] Cameron
 - [ ] Adam
-- [ ] Katie
-- [ ] Jangho
+- [X] Katie
+- [X] Jangho
