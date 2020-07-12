@@ -18,16 +18,16 @@ int main(int argc, char* argv[])
         };
 
         Box bx2(IntVect(0),IntVect(31));
-        FArrayBox fab2(bx2,1);
+        FArrayBox fab2(bx2,5);
         Array4<Real> arr2 = fab2.array();
-        auto f2 = [=] AMREX_GPU_DEVICE (int i, int j, int k) noexcept
+        auto f2 = [=] AMREX_GPU_DEVICE (int i, int j, int k, int n) noexcept
         {
-            arr2(i,j,k) = 2.0;
+            arr2(i,j,k,n) = 2.0;
         };
 
-        Gpu::Fuser3D fuser;
+        Gpu::Fuser fuser;
         fuser.Register(bx1, f1);
-        fuser.Register(bx2, f2);
+        fuser.Register(bx2, 4, f2);
         fuser.Launch();
     }
     amrex::Finalize();
