@@ -22,12 +22,20 @@ int main(int argc, char* argv[])
         Array4<Real> arr2 = fab2.array();
         auto f2 = [=] AMREX_GPU_DEVICE (int i, int j, int k, int n) noexcept
         {
-            arr2(i,j,k,n) = 2.0;
+            arr2(i,j,k,n) = 4.0;
+        };
+
+        Gpu::DeviceVector<int> vec(1000);
+        int* pvec = vec.data();
+        auto f3 = [=] AMREX_GPU_DEVICE (int i) noexcept
+        {
+            pvec[i] = 8;
         };
 
         Gpu::Fuser fuser;
         fuser.Register(bx1, f1);
-        fuser.Register(bx2, 4, f2);
+        fuser.Register(bx2, fab2.nComp(), f2);
+        fuser.Register(vec.size(), f3);
         fuser.Launch();
     }
     amrex::Finalize();
