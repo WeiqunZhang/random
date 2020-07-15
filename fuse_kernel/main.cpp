@@ -17,6 +17,8 @@ int main(int argc, char* argv[])
             arr1(i,j,k) = 2.0;
         };
 
+        static_assert(std::is_trivially_copyable<decltype(f1)>::value,"xxxxx");
+
         Box bx2(IntVect(0),IntVect(31));
         FArrayBox fab2(bx2,5);
         Array4<Real> arr2 = fab2.array();
