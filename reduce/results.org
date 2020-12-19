@@ -1,0 +1,9 @@
+
+* Vector of 1e7 Reals, MultiFab of 256**3 cells
+| Device | Data     | ReduceOps | ParallelFor |
+|--------+----------+-----------+-------------|
+| A100   | Vector   |   1.13e-4 |     1.32e-4 |
+| A100   | MultiFab |   2.66e-4 |     2.05e-4 |
+| V100   | Vector   |   1.40e-4 |     1.18e-4 |
+| V100   | MultiFab |   1.97e-4 |     2.50e-4 |
+
