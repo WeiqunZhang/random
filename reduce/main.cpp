@@ -185,8 +185,10 @@ void main_main ()
     Gpu::synchronize();
     t_mf_new = amrex::second() - t_mf_new;
 
-    amrex::Print() << "Vector: ReduceOps time is " << t_vec_orig
+    amrex::Print() << "Sum of Vector of " << N << " Reals"
+                   << ": ReduceOps time is " << t_vec_orig
                    << ", ParallelFor time is " << t_vec_new << "\n"
-                   << "MultiFab: ReduceOps time is " << t_mf_orig
+                   << "Sum of MultiFab of " << mf.boxArray().numPts() << " cells"
+                   << ": ReduceOps time is " << t_mf_orig
                    << ", ParallelFor time is " << t_mf_new << std::endl;
 }
