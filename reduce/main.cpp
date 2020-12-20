@@ -76,7 +76,7 @@ void main_main ()
     t_vec_orig = amrex::second() - t_vec_orig;
 
     { // warm up
-        DeviceBuffer<Real> da({0.0});
+        Gpu::Buffer<Real> da({0.0});
         Real* dp = da.data();
         amrex::ParallelFor(Gpu::KernelInfo().setReduction(true), N,
         [=] AMREX_GPU_DEVICE (int i, Gpu::Handler const& handler) noexcept
@@ -90,7 +90,7 @@ void main_main ()
     Gpu::synchronize();
     Real t_vec_new = amrex::second();
     {
-        DeviceBuffer<Real> da({0.0});
+        Gpu::Buffer<Real> da({0.0});
         Real* dp = da.data();
         amrex::ParallelFor(Gpu::KernelInfo().setReduction(true), N,
         [=] AMREX_GPU_DEVICE (int i, Gpu::Handler const& handler) noexcept
@@ -148,7 +148,7 @@ void main_main ()
     t_mf_orig = amrex::second() - t_mf_orig;
 
     { // warm up
-        DeviceBuffer<Real> da({0.0});
+        Gpu::Buffer<Real> da({0.0});
         Real* dp = da.data();
         for (MFIter mfi(mf); mfi.isValid(); ++mfi)
         {
@@ -167,7 +167,7 @@ void main_main ()
     Gpu::synchronize();
     Real t_mf_new = amrex::second();
     {
-        DeviceBuffer<Real> da({0.0});
+        Gpu::Buffer<Real> da({0.0});
         Real* dp = da.data();
         for (MFIter mfi(mf); mfi.isValid(); ++mfi)
         {
