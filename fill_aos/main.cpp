@@ -76,11 +76,15 @@ void main_main ()
         [=] AMREX_GPU_DEVICE (int i, int j, int k) noexcept
         {
             if (aos(i,j,k)[0] != Real(N-1)) {
-                printf("aos(%d,%d,%d)[0] = %g\n",i,j,k,aos(i,j,k)[0]);
+#if AMREX_DEVICE_COMPILE
+                AMREX_DEVICE_PRINTF("aos(%d,%d,%d)[0] = %g\n",i,j,k,aos(i,j,k)[0]);
+#endif
             }
             for (int n = 1; n < N; ++n) {
                 if (aos(i,j,k)[n] != -1.) {
-                    printf("aos(%d,%d,%d)[%d] = %g\n",i,j,k,n,aos(i,j,k)[n]);
+#if AMREX_DEVICE_COMPILE
+                    AMREX_DEVICE_PRINTF("aos(%d,%d,%d)[%d] = %g\n",i,j,k,n,aos(i,j,k)[n]);
+#endif
                 }
             }
         });
